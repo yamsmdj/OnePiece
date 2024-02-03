@@ -1,6 +1,7 @@
 <?php
 require_once dirname(__DIR__) . '/config/config.php';
 require_once dirname(__DIR__) . '/function/db.fn.php';
+require_once dirname(__DIR__) . '/function/onepiece.fn.php';
 $db = getPDOlink($config);
 
 ?>
@@ -16,11 +17,12 @@ $db = getPDOlink($config);
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/fav/fav32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/fav/fav32.png">
     <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="css/style.css">
     <title>ONE PIECE</title>
 </head>
 <body>   
 <nav class="navbar navbar-expand-lg bg-body-tertiary py-4">
-  <div class="container-fluid ">
+  <div class="container-fluid navbar-light">
     <a class="navbar-brand" href="/index.php"> ONE PIECE
       <img src="assets/img/chapeaudepaille" alt="chapeau de paille" class="h-100 w-25"> </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
