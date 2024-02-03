@@ -1,0 +1,131 @@
+<mxfile host="65bd71144e">
+    <diagram id="qtsq25QqfT0_8w6VaKV8" name="Page-1">
+        <mxGraphModel dx="1378" dy="957" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Fruit&amp;nbsp;" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="160" width="260" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="id INT PRIMARY KEY AI NOT NULL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="2" vertex="1">
+                    <mxGeometry x="-6" y="25" width="220" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="name VARCHAR 100 NOT NULL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="2" vertex="1">
+                    <mxGeometry x="-6" y="50" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="genre VARCHAR&amp;nbsp; 100 NOT NULL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="2" vertex="1">
+                    <mxGeometry x="-6" y="80" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="price INT&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="2" vertex="1">
+                    <mxGeometry x="-6" y="110" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="personnage_id INT NOT NULL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="2" vertex="1">
+                    <mxGeometry x="-6" y="170" width="190" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="pathimg VARCHAR150" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="2" vertex="1">
+                    <mxGeometry y="140" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="personnage" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="130" width="260" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="id INT PRIMARY KEY AI NOT NULL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="7" vertex="1">
+                    <mxGeometry x="-6" y="25" width="220" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="name VARCHAR 100 NOT NULL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="7" vertex="1">
+                    <mxGeometry x="-6" y="50" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="price INT&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="7" vertex="1">
+                    <mxGeometry x="-6" y="110" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="pathimg VARCHAR150" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="7" vertex="1">
+                    <mxGeometry x="-6" y="80" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="description TEXT&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="7">
+                    <mxGeometry y="150" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="Arc" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="450" width="260" height="230" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="id INT PRIMARY KEY AI NOT NULL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="20" vertex="1">
+                    <mxGeometry x="-6" y="30" width="220" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="name VARCHAR 100 NOT NULL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="20" vertex="1">
+                    <mxGeometry x="-6" y="60" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="number&amp;nbsp; INT&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="20" vertex="1">
+                    <mxGeometry x="-6" y="90" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="pathimg VARCHAR150" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="20" vertex="1">
+                    <mxGeometry x="-6" y="120" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="crew" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" parent="1" vertex="1">
+                    <mxGeometry x="850" y="344" width="260" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="id INT PRIMARY KEY AI NOT NULL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="28" vertex="1">
+                    <mxGeometry x="-6" y="30" width="220" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="name VARCHAR 100 NOT NULL" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="28" vertex="1">
+                    <mxGeometry x="-6" y="60" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="price INT&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="28" vertex="1">
+                    <mxGeometry y="130" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="capitaine VARCHAR 50 UNIQUE" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="28" vertex="1">
+                    <mxGeometry x="-6" y="100" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="pathimg VARCHAR150" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="28" vertex="1">
+                    <mxGeometry y="160" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="apparition&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="28" vertex="1">
+                    <mxGeometry y="210" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="personnage_crew" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" parent="1" vertex="1">
+                    <mxGeometry x="827" y="150" width="260" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="crew_id INT" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="43" vertex="1">
+                    <mxGeometry x="23" y="60" width="90" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="personnage_id INT" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="43" vertex="1">
+                    <mxGeometry x="7" y="30" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" style="edgeStyle=none;html=1;" parent="1" source="52" target="29" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="890" y="240"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="54" style="edgeStyle=none;html=1;" parent="1" source="51" target="8" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="790" y="160"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="55" value="fruit_personnage" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="20" width="260" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="fruit_id INT" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="55" vertex="1">
+                    <mxGeometry x="20" y="60" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="personnage_id INT" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="55" vertex="1">
+                    <mxGeometry x="7" y="30" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" style="edgeStyle=none;html=1;" parent="1" source="56" target="3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="170" y="140"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="59" style="edgeStyle=none;html=1;" parent="1" source="57" target="8" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="490" y="50"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
