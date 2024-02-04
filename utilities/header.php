@@ -21,19 +21,19 @@ $db = getPDOlink($config);
     <title>ONE PIECE</title>
 </head>
 <body>   
-<nav class="navbar navbar-expand-lg bg-body-tertiary py-4">
-  <div class="container-fluid navbar-light">
-    <a class="navbar-brand" href="/index.php"> ONE PIECE
+<nav class="navbar navbar-expand-lg bg-body-tertiary py-2 text-center ">
+  <div class="container-fluid navbar-light flex-column text-center ">
+    <a class="navbar-brand fs-1 fw-bold" href="/index.php"> ONE PIECE
       <img src="assets/img/chapeaudepaille" alt="chapeau de paille" class="h-100 w-25"> </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="/personnage.php">Personnage</a>
-        <a class="nav-link" href="/story.php">Story</a>
-        <a class="nav-link" href="/fruits.php">Fruit du demon</a>
-        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+    <div class="collapse navbar-collapse w-100" id="navbarNavAltMarkup">
+      <div class="navbar-nav justify-content-evenly fs-3 w-100">
+        <a class="nav-link fw-bold " href="" >EQUIPAGE</a>
+        <a class="nav-link fw-bold  " aria-current="page" href="/personnage.php">PERSONNAGE</a>
+        <a class="nav-link fw-bold " href="/story.php">STORY</a>
+        <a class="nav-link fw-bold " href="/fruits.php">FRUIT DU DEMON</a>
       </div>
     </div>
   </div>

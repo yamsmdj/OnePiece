@@ -1,11 +1,9 @@
 <?php
 include_once __DIR__ . '/utilities/header.php';
-$personnages = allPerson($db);
+$crew = allCrew($db)
 ?>
 
-<div class="d-flex flex-wrap justify-content-center py-5">
-<?=include_once __DIR__ . '/utilities/cards.php'; ?>
-</div>
+<a href=""><img src="<?= $crew['pathimg'] ?>" alt="<?= $crew['name'] ?>"></a>
 
 <?php include_once __DIR__ . '/utilities/footer.php'; ?>
 
