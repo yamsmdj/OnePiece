@@ -14,7 +14,7 @@ if (isset($_POST ['genre'])) {
 
 <form method="post" class="d-flex justify-content-center w-25" >
   <select name="genre" class="form-select" aria-label="Default select example">
-    <option selected>Choisissez votre type de fruit</option>
+    <option selected >Tous les type de fruit</option>
     <option value="Paramecia" > Paramecia </option>
     <option value="Zoan" > Zoan </option>
     <option value="Logia"> Logia </option>

@@ -30,10 +30,10 @@ $db = getPDOlink($config);
     </button>
     <div class="collapse navbar-collapse w-100" id="navbarNavAltMarkup">
       <div class="navbar-nav justify-content-evenly fs-3 w-100">
-        <a class="nav-link fw-bold " href="" >EQUIPAGE</a>
+        <a class="nav-link fw-bold " href="/crew.php" >EQUIPAGE</a>
         <a class="nav-link fw-bold  " aria-current="page" href="/personnage.php">PERSONNAGE</a>
-        <a class="nav-link fw-bold " href="/story.php">STORY</a>
         <a class="nav-link fw-bold " href="/fruits.php">FRUIT DU DEMON</a>
+        <a class="nav-link fw-bold " href="/shop.php">SHOP</a>
       </div>
     </div>
   </div>

@@ -37,6 +37,7 @@ function findFruit($db,$currentId){
     $requete = $db->query($sql);
     $myFruit = $requete->fetch();
     return $myFruit;
+    
 }
 function allCrew($db){
     $sql = 'SELECT * FROM crew ';
@@ -45,8 +46,9 @@ function allCrew($db){
 }
 
 function typeFruit($db,$genre) {
-    $sql = "SELECT * FROM fruit 
-    WHERE genre LIKE '$genre' ;";
+    $sql =  "SELECT * FROM fruit WHERE genre = '$genre' 
+    UNION
+    SELECT * FROM fruit WHERE NOT EXISTS (SELECT * FROM fruit WHERE genre = '$genre')";
     $requete = $db->query($sql);
     $fruits = $requete->fetchAll();
     return $fruits;
