@@ -22,7 +22,7 @@ $myPerso = myPerso($db,$_GET['id']);
         <h4><?= $myPerso['namecrew'] ?> </h4>
       </div>
     </div>
-  
+
     <div class="card" style="width: 15rem;">
       <img src="<?= $myPerso['imgfruit'] . str_replace(' ', '',$myPerso['namefruit'])  . '.jpg' ?> " class="card-img-top" alt="...">
       <div class="card-body">

@@ -1,9 +1,6 @@
 <?php
-include_once __DIR__ . '/utilities/header.php';
-$crew = allCrew($db)
-?>
+include_once __DIR__ . '/utilities/header.php'; ?>
 
-<a href=""><img src="<?= $crew['pathimg'] ?>" alt="<?= $crew['name'] ?>"></a>
 
 <?php include_once __DIR__ . '/utilities/footer.php'; ?>
 

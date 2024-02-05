@@ -20,7 +20,7 @@ $db = getPDOlink($config);
     <link rel="stylesheet" href="css/style.css">
     <title>ONE PIECE</title>
 </head>
-<body>   
+<body class="d-flex flex-column vh-100">
 <nav class="navbar navbar-expand-lg bg-body-tertiary py-2 text-center ">
   <div class="container-fluid navbar-light flex-column text-center ">
     <a class="navbar-brand fs-1 fw-bold" href="/index.php"> ONE PIECE
@@ -38,3 +38,4 @@ $db = getPDOlink($config);
     </div>
   </div>
 </nav>
+<main class="flex-grow-1">

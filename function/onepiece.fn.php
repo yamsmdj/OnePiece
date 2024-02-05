@@ -39,12 +39,6 @@ function findFruit($db,$currentId){
     return $myFruit;
     
 }
-function allCrew($db){
-    $sql = 'SELECT * FROM crew ';
-    $requete = $db->query($sql);
-    $crew = $requete->fetchAll();
-}
-
 function typeFruit($db,$genre) {
     $sql =  "SELECT * FROM fruit WHERE genre = '$genre' 
     UNION
@@ -53,5 +47,33 @@ function typeFruit($db,$genre) {
     $fruits = $requete->fetchAll();
     return $fruits;
 }
+
+function allCrew($db){
+    $sql = 'SELECT * FROM crew';
+    $requete = $db->query($sql);
+    $crews = $requete->fetchAll();
+    return $crews;
+}
+
+function myCrew($db,$currentId){
+    $sql = "SELECT c.name, c.pathimg AS crewimg, c.description AS crewdesc, 
+    p.pathimg AS persoimg , p.name AS personame
+    FROM crew c
+    INNER JOIN personnage p ON p.crew_id = c.id
+    WHERE c.id = $currentId";
+    $requete = $db->query($sql);
+    $crews = $requete->fetch();
+    return $crews;
+}
+function myPersotoCrew($db, $currentId){
+    $sql = "SELECT p.pathimg AS persoimg , p.name AS personame, p.crew_id
+    FROM personnage p
+    INNER JOIN crew ON crew.id = crew_id
+    WHERE $currentId = crew.id";
+    $requete = $db->query($sql);
+    $perso = $requete->fetchAll();
+    return $perso;
+}
+
 
 ?>
