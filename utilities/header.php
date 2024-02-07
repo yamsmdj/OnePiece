@@ -33,7 +33,7 @@ $db = getPDOlink($config);
         <a class="nav-link fw-bold " href="/crew.php" >EQUIPAGE</a>
         <a class="nav-link fw-bold  " aria-current="page" href="/personnage.php">PERSONNAGE</a>
         <a class="nav-link fw-bold " href="/fruits.php">FRUIT DU DEMON</a>
-        <a class="nav-link fw-bold " href="/shop.php">SHOP</a>
+        <a class="nav-link fw-bold disabled" href="/shop.php">SHOP</a>
       </div>
     </div>
   </div>

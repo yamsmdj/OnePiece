@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="qtsq25QqfT0_8w6VaKV8" name="Page-1">
-        <mxGraphModel dx="1279" dy="889" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="895" dy="622" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -76,10 +76,10 @@
                 <mxCell id="39" value="pathimg VARCHAR150" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="28" vertex="1">
                     <mxGeometry y="160" width="150" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="61" value="crew_id INT" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                <mxCell id="61" value="crew_id INT" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
                     <mxGeometry x="465" y="305" width="90" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="62" style="edgeStyle=none;html=1;" edge="1" parent="1" source="29" target="61">
+                <mxCell id="62" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" source="29" target="61" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="750" y="160"/>
@@ -87,7 +87,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="63" style="edgeStyle=none;html=1;" edge="1" parent="1" target="12">
+                <mxCell id="63" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" parent="1" target="12" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="440" y="160" as="sourcePoint"/>
                         <Array as="points">

@@ -31,7 +31,7 @@ function myPerso($db,$currentId){
     f.name AS namefruit , f.pathimg AS imgfruit
     FROM personnage p
     INNER JOIN crew c ON p.crew_id = c.id
-    INNER JOIN fruit f ON p.id = f.personnage_id
+    LEFT JOIN fruit f ON p.id = f.personnage_id
     WHERE p.id = $currentId;";
     $requete = $db->query($sql);
     $myPerso = $requete->fetch();
@@ -75,7 +75,7 @@ function myCrew($db,$currentId){
     return $crews;
 }
 function myPersotoCrew($db, $currentId){
-    $sql = "SELECT p.pathimg AS persoimg , p.name AS personame, p.crew_id
+    $sql = "SELECT p.id AS idperso , p.pathimg AS persoimg , p.name AS personame, p.crew_id
     FROM personnage p
     INNER JOIN crew ON crew.id = crew_id
     WHERE $currentId = crew.id";

@@ -1,23 +1,28 @@
 
-<div class="d-flex py-4 m-auto bg-dark">
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="<?= $crews['crewimg']?>" class="img-fluid rounded-start " alt="">
-          </div>
-              <h5 class="card-title"><?= $crews['name']?></h5>
-              <p class="card-text"><?= $crews['crewdesc']?></p>
+<div class="d-flex flex-column align-items-center m-auto py-4 bg-dark">
+    <div class="d-flex" style="max-width: 100%;">
+        <div class="col-md-4">
+        <a href="/crew.php"> <img src="<?= $crews['crewimg']?>" class="img-fluid rounded-start text-center" alt="<?= $crews['name']?>"></a>
         </div>
-      </div>
+        <div class="text-light">
+          <h5 class="card-title"><?= $crews['name']?></h5>
+          <p class="card-text"><?= $crews['crewdesc']?> </p>
+        </div>
+
+    </div>
+
+      
+    <div class="d-flex ">
 
       <?php foreach ($persos as  $perso) : ?>
-        <div class="d-flex flex-wrap py-4 m-auto  ">
-        <div class="card mb-3" style="max-width: 540px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="<?= $perso['persoimg'] . str_replace(' ' , '_',$perso['personame']) . '.jpg' ?>" class="img-fluid rounded-start " alt="">
-            </div>
-                <h5 class="card-title"><?= $perso['personame']?></h5>
+        <div class="d-flex flex-wrap py-4 mx-3  ">
+          <div class="" style="max-width: 540px;">
+              <div class="col-md-4 w-100">
+              <a href="<?= '/myperso.php?id=' . $perso['idperso'] ?>"><img src="<?= $perso['persoimg'] . str_replace(' ' , '_',$perso['personame']) . '.jpg' ?>" class="img-fluid rounded-start m-h-350" alt=""></a> 
+              </div>
+              <h5 class="card-title text-light text-center"><?= $perso['personame']?></h5>
           </div>
         </div>
-      <?php endforeach?>
+        <?php endforeach?>
+      </div>
+</div>
