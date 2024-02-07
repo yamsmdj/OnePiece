@@ -1,24 +1,37 @@
 <?php
-include_once __DIR__ . '/utilities/header.php'; ?>
+include_once __DIR__ . '/utilities/header.php'; 
+$fruit = singleFruit($db);
+?>
 
+<div class="d-flex  text-center align-items-center justify-content-center h-100 ">
 
-<div class="d-flex flex-column align-items-center ">
+    <div class="card align-items-center min-h-350 bg-dark text-white" style="width: 25rem;">
+        <div class=" ">
+            <img src="<?= $fruit['imgfruit'] . str_replace(' ', '', $fruit['namefruit']) .'.jpg' ?>" class="card-img-top  m-h-350" alt="<?= $fruit['namefruit'] ?>">
+        </div>
+        <div class="card-body">
+                <h5 class="card-title"><strong> UN FRUIT </strong></h5>
+                <a href="/fruits.php" class="btn btn-outline-warning ">CHOISIR VOTRE FRUIT</a>
+        </div>
+    </div>
 
-    <div class="d-flex justify-content-between align-items-center m-auto w-50 ">
-        <img src="" alt="">
-        <strong> UN FRUIT </strong>
+    <div class=" align-items-center px-5 fs-1">
         <strong> = </strong>
-        <img src="" alt="">
-        <strong> UN POUVOIR ET LA SANTÉ A VIE </strong>
     </div>
 
-    <div class="d-flex justify-content-around">
-        <a href="/fruits.php" class="bg-light z-3">CHOISIR VOTRE FRUIT</a>
-        <a href="/personnage.php" class="bg-light z-3" >PERSONNE QUI L'ONT DEJA MANGER</a>
+    <div class="card align-items-center m-h-350 bg-dark text-white" style="width: 25rem;">
+            <div class="">
+                <img src="<?= $fruit['imgperso'] . str_replace(' ','_',$fruit['nameperso']) . '.jpg' ?>" class="card-img-top  m-h-350" alt="<?= $fruit['nameperso'] ?>">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title "><strong> UN POUVOIR ET LA SANTÉ A VIE </strong></h5>
+                <a href="/personnage.php" class="btn btn-outline-danger" >PERSONNE QUI L'ONT DEJA MANGER</a>
+            </div>
     </div>
-
+       
 </div>
 
+    
 
 <?php include_once __DIR__ . '/utilities/footer.php'; ?>
 

@@ -14,6 +14,16 @@ function allFruits($db){
     $fruits = $requete->fetchAll();
     return $fruits ; 
 }
+function singleFruit($db){
+    $sql = 'SELECT f.name AS namefruit, f.pathimg AS imgfruit,
+    p.name AS nameperso, p.pathimg AS imgperso
+    FROM fruit f
+    INNER JOIN personnage p ON p.id = f.personnage_id 
+    ORDER BY RAND()';
+    $requete = $db->query($sql);
+    $fruit = $requete->fetch();
+    return $fruit ; 
+}
 
 function myPerso($db,$currentId){
     $sql = "SELECT p.id, p.name AS nameperso  , p.pathimg AS imgperso, p.price, p.description, p.crew_id,
