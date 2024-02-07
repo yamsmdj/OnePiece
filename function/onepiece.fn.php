@@ -30,7 +30,8 @@ function myPerso($db,$currentId){
 
 
 function findFruit($db,$currentId){
-    $sql = 'SELECT f.name AS fname, f.pathimg AS fpathimg , f.description AS fruit_desc, perso.id AS p_id, perso.description AS person_desc, perso.name AS p_name, perso.pathimg AS p_pathimg
+    $sql = 'SELECT f.name AS fname, f.pathimg AS fpathimg , f.description AS fruit_desc, perso.id AS p_id,
+     perso.description AS person_desc, perso.name AS p_name, perso.pathimg AS p_pathimg
     FROM personnage perso
     INNER JOIN fruit f ON perso.id = f.personnage_id
     WHERE f.id = ' . $currentId;
@@ -40,9 +41,7 @@ function findFruit($db,$currentId){
     
 }
 function typeFruit($db,$genre) {
-    $sql =  "SELECT * FROM fruit WHERE genre = '$genre' 
-    UNION
-    SELECT * FROM fruit WHERE NOT EXISTS (SELECT * FROM fruit WHERE genre = '$genre')";
+    $sql =  "SELECT * FROM fruit WHERE genre = '$genre'";
     $requete = $db->query($sql);
     $fruits = $requete->fetchAll();
     return $fruits;
