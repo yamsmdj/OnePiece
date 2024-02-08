@@ -1,13 +1,10 @@
 <?php 
-
 function allPerson($db) {
     $sql = 'SELECT * FROM personnage';
     $requete = $db->query($sql);
     $personnages = $requete->fetchAll();
     return $personnages ;
 };
-
-
 function allFruits($db){
     $sql = 'SELECT * FROM fruit';
     $requete = $db->query($sql);
@@ -24,7 +21,6 @@ function singleFruit($db){
     $fruit = $requete->fetch();
     return $fruit ; 
 }
-
 function myPerso($db,$currentId){
     $sql = "SELECT p.id, p.name AS nameperso  , p.pathimg AS imgperso, p.price, p.description, p.crew_id,
     c.name AS namecrew, c.pathimg AS imgcrew,
@@ -37,8 +33,6 @@ function myPerso($db,$currentId){
     $myPerso = $requete->fetch();
     return $myPerso;
 }
-
-
 function findFruit($db,$currentId){
     $sql = 'SELECT f.name AS fname, f.pathimg AS fpathimg , f.description AS fruit_desc, perso.id AS p_id,
      perso.description AS person_desc, perso.name AS p_name, perso.pathimg AS p_pathimg
@@ -56,14 +50,12 @@ function typeFruit($db,$genre) {
     $fruits = $requete->fetchAll();
     return $fruits;
 }
-
 function allCrew($db){
     $sql = 'SELECT * FROM crew';
     $requete = $db->query($sql);
     $crews = $requete->fetchAll();
     return $crews;
 }
-
 function myCrew($db,$currentId){
     $sql = "SELECT c.name, c.pathimg AS crewimg, c.description AS crewdesc, 
     p.pathimg AS persoimg , p.name AS personame
@@ -83,6 +75,4 @@ function myPersotoCrew($db, $currentId){
     $perso = $requete->fetchAll();
     return $perso;
 }
-
-
 ?>

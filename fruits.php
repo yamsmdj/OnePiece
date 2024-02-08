@@ -12,7 +12,7 @@ if (isset($_POST['genre']) && !empty($_POST['genre'])) {
 
 <h1 class="text-center pt-4">FRUIT DU DEMON</h1>
 
-<form method="post" class="d-flex justify-content-center w-25 m-auto pt-5" >
+<form method="post" class="d-flex flex-column  flex-md-row justify-content-center w-25 m-auto pt-5" >
   <select name="genre" class="form-select" aria-label="Default select example">
     <option selected value="">Tous les type de fruit</option>
     <option value="Paramecia" > Paramecia </option>

@@ -8,6 +8,7 @@ if (isset($crews) && !empty($crews)) {
   $crewname = $crews['name'];
   $crewdesc = $crews['crewdesc'];
 }
+
 ?>
 
 <div class="d-flex flex-column align-items-center m-auto py-4 bg-dark">
