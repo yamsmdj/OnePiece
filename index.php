@@ -12,7 +12,7 @@ $fruit = singleFruit($db);
         <div class="card-body">
                 <h5 class="card-title"><strong> UN FRUIT </strong></h5>
                 <a href="/fruits.php" class="btn btn-outline-warning ">CHOISIR VOTRE FRUIT</a>
-        </div>
+        </div> 
     </div>
 
     <div class=" align-items-center px-5 fs-1">
