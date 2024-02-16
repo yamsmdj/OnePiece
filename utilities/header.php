@@ -1,4 +1,5 @@
 <?php
+
 require_once dirname(__DIR__) . '/config/config.php';
 require_once dirname(__DIR__) . '/function/db.fn.php';
 require_once dirname(__DIR__) . '/function/onepiece.fn.php';

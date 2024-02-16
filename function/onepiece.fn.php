@@ -1,7 +1,8 @@
 <?php 
 function allPerson($db) {
     $sql = 'SELECT * FROM personnage';
-    $requete = $db->query($sql);
+    $requete = $db->prepare($sql);
+    $requete->execute();
     $personnages = $requete->fetchAll();
     return $personnages ;
 };
@@ -22,14 +23,19 @@ function singleFruit($db){
     return $fruit ; 
 }
 function myPerso($db,$currentId){
+    
     $sql = "SELECT p.id, p.name AS nameperso  , p.pathimg AS imgperso, p.price, p.description, p.crew_id,
     c.name AS namecrew, c.pathimg AS imgcrew,
     f.name AS namefruit , f.pathimg AS imgfruit
     FROM personnage p
-    INNER JOIN crew c ON p.crew_id = c.id
+    LEFT JOIN crew c ON p.crew_id = c.id
     LEFT JOIN fruit f ON p.id = f.personnage_id
-    WHERE p.id = $currentId;";
-    $requete = $db->query($sql);
+    WHERE p.id = :currentId ;";
+
+    $requete = $db->prepare($sql);
+    $requete->bindParam(":currentId", $currentId);
+    $requete->execute();
+    
     $myPerso = $requete->fetch();
     return $myPerso;
 }

@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/utilities/header.php';
 
-if (isset($_POST['genre']) && !empty($_POST['genre'])) {
-    $genre = $_POST['genre'] ; 
+if (isset($_GET['genre']) && !empty($_GET['genre'])) {
+    $genre = $_GET['genre'] ; 
     $fruits = typeFruit($db,$genre);
   } else {
     $fruits = allFruits($db);
@@ -12,7 +12,7 @@ if (isset($_POST['genre']) && !empty($_POST['genre'])) {
 
 <h1 class="text-center pt-4">FRUIT DU DEMON</h1>
 
-<form method="post" class="d-flex flex-column  flex-md-row justify-content-center w-25 m-auto pt-5" >
+<form method="GET" class="d-flex flex-column  flex-md-row justify-content-center w-25 m-auto pt-5" >
   <select name="genre" class="form-select" aria-label="Default select example">
     <option selected value="">Tous les type de fruit</option>
     <option value="Paramecia" > Paramecia </option>
