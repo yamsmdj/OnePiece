@@ -4,7 +4,7 @@ $personnages = allPerson($db);
 ?>
 
 
-<h1> Personnages </h1>
+<h1 class="text-center pt-4"> Personnages </h1>
 <div class="d-flex flex-wrap justify-content-center py-5">
 <?=include __DIR__ . '/utilities/cards/card.allPerso.php'; 
 require_once __DIR__ . '/function/crud/insert.fn.php';

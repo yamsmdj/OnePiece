@@ -81,7 +81,12 @@ function myPersotoCrew($db, $currentId){
     $perso = $requete->fetchAll();
     return $perso;
 }
-
+// BONUS // 
+function directory_separ($url){
+    $DirectorSepare = str_replace('/', DIRECTORY_SEPARATOR, $url);
+    return $DirectorSepare;
+}
+// SYSTEME CONNEXION/INSCRIPTION
 function Authentification($db, $username , $password){
     $sql = "SELECT u.id, u.username, u.password,u.role_id FROM users u 
     LEFT JOIN role_users r ON r.role = u.id
@@ -107,6 +112,22 @@ function Authentification($db, $username , $password){
     ];
     header('Location: /index.php');
     exit();
+}
+function register($db){
+    $pseudo = $_POST['pseudo'];
+    $password = $_POST['password'];
+    $mail = $_POST['mail'];
+    $firstname = $_POST['firstname'];
+
+    if (isset($_POST) && !empty($_POST)) {
+        $sql = "INSERT INTO users (`username`, `password`,`role_id`, `email`, `firstname`) VALUES (:pseudo,:password,2,:mail,:firstname)";
+        $query = $db->prepare($sql);
+        $query->bindParam(':pseudo', $pseudo);
+        $query->bindParam(':password', $password);
+        $query->bindParam(':mail', $mail);
+        $query->bindParam(':firstname', $firstname);
+        $query->execute();
+    }
 }
 
 ?>

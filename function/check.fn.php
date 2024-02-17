@@ -8,13 +8,8 @@ function isConnected (): bool {
 
 function sendUserConnect(): void {
     if(!isConnected()){
-        header('Location: /connexion/login.php');
+        header('Location: /login.php');
         exit();
     }
 }
 
-// function isAdmin() {
-//     // SI je suis connecter en ADMIN alors
-//     // l onglet AJOUT apparait dans le header
-//     if ($username == 'username')
-// }

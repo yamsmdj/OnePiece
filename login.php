@@ -19,17 +19,21 @@ if ($erreur): ?>
     </div>
 <?php endif
 ?>
-
-<form action="/login.php" method="post" class="d-flex justify-content-center py-5">
+<h1 class="text-center pt-4">Se connecter</h1>
+<form action="/login.php" method="post" class="d-flex flex-column align-items-center py-3 gap-2">
     <div class="form-group ">
         <input class = "m-auto form-control" type="text" name="pseudo" placeholder="pseudo">
     </div>
     <div class="form-group">
         <input class = "m-auto form-control" type="password" name="password" placeholder="password">
     </div>
-    <button type="submit" class="mx-3 btn btn-primary">Se connecter</button>
+        <button type="submit" class="mt-2 btn btn-warning">Se connecter</button>
+        <a href="/register.php" class="pt-2">Pas de compte ? Inscrivez-vous</a>
 </form>
 <?php
+
+
+
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'utilities/footer.php';
 ?>
 

@@ -35,24 +35,21 @@ $db = getPDOlink($config);
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse w-100" id="navbarNavAltMarkup">
-      <div class="navbar-nav justify-content-evenly fs-3 w-100">
-        <a class="nav-link fw-bold " href="/crew.php" >EQUIPAGE</a>
-        <a class="nav-link fw-bold  " aria-current="page" href="/personnage.php">PERSONNAGE</a>
-        <a class="nav-link fw-bold " href="/fruits.php">FRUIT DU DEMON</a>
-        <a class="nav-link fw-bold disabled" href="/shop.php">SHOP</a>
-        <?php 
-        if ($_SESSION['user']['user_role'] == 1) { 
-          ?>
-          <a href="dashboard.php">DASHBOARD</a>
-       <?php }?>
-      </div>
-      <ul class="navbar-nav">
-          <?php if (isConnected()){?>
-            <li class="nav-item"><a class="nav-link"href="connexion/logout.php">Se deconnecter</a></li>
-            <?php }else{ ?>
-              <li class="nav-item"><a class="nav-link"href="/login.php">Se Connecter</a></li>
-            <?php }?>
-      </ul>
+        <div class="navbar-nav justify-content-evenly fs-3 w-100">
+          <a class="nav-link fw-bold " href="/crew.php" >EQUIPAGE</a>
+          <a class="nav-link fw-bold  " aria-current="page" href="/personnage.php">PERSONNAGE</a>
+          <a class="nav-link fw-bold " href="/fruits.php">FRUIT DU DEMON</a>
+          <a class="nav-link fw-bold disabled" href="/shop.php">SHOP</a>
+          <?php if (isset($_SESSION['user']['user_role']) && $_SESSION['user']['user_role']== 1) { ?>
+          <a class="nav-link text-warning" href="dashboard.php">DASHBOARD</a>
+          <?php }
+          if (isConnected()){?>
+              <a class="nav-link"href="connexion/logout.php">Se deconnecter</a>
+              <?php }else{ ?>
+              <a class="nav-link"href="/login.php">Se Connecter</a>
+              <?php }?>
+         
+        </div>
     </div>
   </div>
 </nav>
