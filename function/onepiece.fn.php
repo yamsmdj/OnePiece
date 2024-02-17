@@ -81,4 +81,32 @@ function myPersotoCrew($db, $currentId){
     $perso = $requete->fetchAll();
     return $perso;
 }
+
+function Authentification($db, $username , $password){
+    $sql = "SELECT u.id, u.username, u.password,u.role_id FROM users u 
+    LEFT JOIN role_users r ON r.role = u.id
+    WHERE username = :username ";
+    $query = $db->prepare($sql);
+    $query->bindParam(':username', $username);
+    $query->execute();
+    $user=$query->fetch();
+    if (!$user) {
+        die('user incorrect');
+    }
+    if (!$password) {
+     die('test incorrect');
+    }
+    if (session_status()=== PHP_SESSION_NONE){
+        session_start();
+      }
+    $_SESSION['connecte'] = 1;
+    $_SESSION['user']= [
+        "id" => $user['id'],
+        "username" => $user["username"],
+        "user_role" => $user['role_id']
+    ];
+    header('Location: /index.php');
+    exit();
+}
+
 ?>

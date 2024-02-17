@@ -1,6 +1,5 @@
 <?php
-
-include_once __DIR__ . '/utilities/header.php'; 
+include_once __DIR__ . DIRECTORY_SEPARATOR .'utilities/header.php'; 
 $fruit = singleFruit($db);
 ?>
 

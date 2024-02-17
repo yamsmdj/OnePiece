@@ -13,7 +13,7 @@ $crews = allCrew($db);
       </div>
     </div>
     <?php endforeach ;
-require_once __DIR__ . '/function/crud/insert.fn.php' ; 
+// require_once __DIR__ . '/function/crud/insert.fn.php' ; 
 // $insertcrew =  insertCrew($db) ;
 ?>
 <?php 

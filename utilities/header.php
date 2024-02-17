@@ -1,9 +1,14 @@
 <?php
-
-require_once dirname(__DIR__) . '/config/config.php';
-require_once dirname(__DIR__) . '/function/db.fn.php';
-require_once dirname(__DIR__) . '/function/onepiece.fn.php';
+ if (session_status()=== PHP_SESSION_NONE){
+  session_start();
+}
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'config/config.php';
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'function/db.fn.php';
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'function/onepiece.fn.php';
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'function/check.fn.php';
 $db = getPDOlink($config);
+
+
 
 ?>
 
@@ -25,7 +30,7 @@ $db = getPDOlink($config);
 <nav class="navbar navbar-expand-lg bg-body-tertiary py-2 text-center ">
   <div class="container-fluid navbar-light flex-column text-center ">
     <a class="navbar-brand fs-1 fw-bold" href="/index.php"> ONE PIECE
-      <img src="assets/img/chapeaudepaille" alt="chapeau de paille" class="h-100 w-25"> </a>
+      <img src="assets/img/chapeaudepaille.png" alt="chapeau de paille" class="h-100 w-25"> </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -35,7 +40,19 @@ $db = getPDOlink($config);
         <a class="nav-link fw-bold  " aria-current="page" href="/personnage.php">PERSONNAGE</a>
         <a class="nav-link fw-bold " href="/fruits.php">FRUIT DU DEMON</a>
         <a class="nav-link fw-bold disabled" href="/shop.php">SHOP</a>
+        <?php 
+        if ($_SESSION['user']['user_role'] == 1) { 
+          ?>
+          <a href="dashboard.php">DASHBOARD</a>
+       <?php }?>
       </div>
+      <ul class="navbar-nav">
+          <?php if (isConnected()){?>
+            <li class="nav-item"><a class="nav-link"href="connexion/logout.php">Se deconnecter</a></li>
+            <?php }else{ ?>
+              <li class="nav-item"><a class="nav-link"href="/login.php">Se Connecter</a></li>
+            <?php }?>
+      </ul>
     </div>
   </div>
 </nav>
