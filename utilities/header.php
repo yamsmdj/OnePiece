@@ -10,6 +10,7 @@ $db = getPDOlink($config);
 
 
 
+
 ?>
 
 
@@ -40,11 +41,16 @@ $db = getPDOlink($config);
           <a class="nav-link fw-bold  " aria-current="page" href="/personnage.php">PERSONNAGE</a>
           <a class="nav-link fw-bold " href="/fruits.php">FRUIT DU DEMON</a>
           <a class="nav-link fw-bold disabled" href="/shop.php">SHOP</a>
-          <?php if (isset($_SESSION['user']['user_role']) && $_SESSION['user']['user_role']== 1) { ?>
-          <a class="nav-link text-warning" href="dashboard.php">DASHBOARD</a>
-          <?php }
+          <?php 
+          if (isset($_SESSION['user']['user_role']) && $_SESSION['user']['user_role']== 1) {?>
+            <a class="nav-link text-warning" href="dashboard.php">DASHBOARD</a>
+         <?php }
+          ?>
+          <!-- <?php //if (isset($_SESSION['user']['user_role']) && $_SESSION['user']['user_role']== 1) { ?>
+          <a class="nav-link text-warning" href="dashboard.php">DASHBOARD</a> // }--> 
+          <?php
           if (isConnected()){?>
-              <a class="nav-link"href="connexion/logout.php">Se deconnecter</a>
+              <a class="nav-link"href="/logout.php">Se deconnecter</a>
               <?php }else{ ?>
               <a class="nav-link"href="/login.php">Se Connecter</a>
               <?php }?>

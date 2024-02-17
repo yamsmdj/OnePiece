@@ -3,13 +3,10 @@ define("CHEMIN_DE_LIMAGE", "assets/img/test/");
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-
     if (isset($_FILES['pathimg']) && $_FILES['pathimg']['error'] == 0) {
 
         $fileTmpPath = $_FILES['pathimg']['tmp_name'];
         $fileName = $_FILES['pathimg']['name'];
-
 
         $newFileName = str_replace(['_','',' '], '-', $fileName);
         // Déplace le fichier téléchargé vers le répertoire de destination
@@ -25,6 +22,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- ?>
 <!DOCTYPE html>
 <html lang="fr">

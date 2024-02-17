@@ -82,8 +82,10 @@ function myPersotoCrew($db, $currentId){
     return $perso;
 }
 // BONUS // 
-function directory_separ($url){
-    $DirectorSepare = str_replace('/', DIRECTORY_SEPARATOR, $url);
+function adaptUrl($url){
+    if (PHP_OS == 'Darwin') {
+        $DirectorSepare = str_replace('/', DIRECTORY_SEPARATOR, $url);
+    }
     return $DirectorSepare;
 }
 // SYSTEME CONNEXION/INSCRIPTION
