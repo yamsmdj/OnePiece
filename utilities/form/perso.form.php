@@ -1,11 +1,12 @@
 <?php
+// var_dump($myPerso);
 
 ?>
 
 <div class="w-50 m-auto text-center">
     <div class="">
         <label for="nom"> Nom du personnage </label>
-        <input type="text" value="<?= $myPerso['nameperso']  ?>" name="name">
+        <input type="text" value="<?= empty($myPerso) ? 'Choisis personnage' : $myPerso['nameperso']  ?>" name="name">
     </div>
     <div class="div">
         <label for="pathimg"> Chemin de l'image </label>
@@ -14,7 +15,7 @@
     <div class="">
         <label for="description"> description : </label>
 
-        <input type="text" value="<?= $myPerso['description'] ?>" name="description">
+        <input type="text" value="<?= empty($myPerso) ? 'description' : $myPerso['description']  ?>" name="description">
         <?php // var_dump($myPerso);
         ?>
     </div>
