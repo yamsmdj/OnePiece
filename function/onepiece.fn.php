@@ -101,6 +101,16 @@ function adaptUrl($url)
     return $DirectorSepare;
 }
 // SYSTEME CONNEXION/INSCRIPTION
+
+
+function sendUserConnect(): void
+{
+    if (!isConnected()) {
+        header('Location: /login.php');
+        exit();
+    }
+}
+
 function isConnected(): bool
 {
     if (session_status() === PHP_SESSION_NONE) {

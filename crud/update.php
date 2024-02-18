@@ -2,31 +2,28 @@
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'utilities' . DIRECTORY_SEPARATOR . 'header.php';
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'file_upload.php';
 
-$currentID = isset($_GET['id']);
-$current_id = $_GET['id'];
-$tableChoice = isset($_POST['tableChoice']);
-$sql = "SELECT * FROM categories_name";
-$query = $db->query($sql);
-$categories = $query->fetchAll();
-
-$crews = Allcrew($db);
-$fruits = allFruits($db);
-$persos = allPerson($db);
-$myPerso = myPerso($db, $current_id);
-$myFruit = findFruit($db, $current_id);
-$myCrew = myCrew($db, $current_id);
-
-
-
-
+    $crews = Allcrew($db);
+    $fruits = allFruits($db);
+    $persos = allPerson($db);
+// $currentID = isset($_GET['id']);
+if (!empty($_GET['id'])) {
+  $current_id = $_GET['id'];
+  $tableChoice = isset($_POST['tableChoice']);
+  $sql = "SELECT * FROM categories_name";
+  $query = $db->query($sql);
+  $categories = $query->fetchAll();
+  $myPerso = myPerso($db, $current_id);
+  $myFruit = findFruit($db, $current_id);
+  $myCrew = myCrew($db, $current_id);
+}
 
 if (isset($_POST) && !empty($_POST)) {
   $nom = $_POST['name'];
   $captain = $_POST['captain'];
   $pathimg = 'assets/img/crew/' . $_POST['pathimg'];
   $desc = $_POST['description'];
-
-  $sql = "UPDATE `crew` SET  `name`= :nom ,`captain` = :captain,`pathimg` = :pathimg, `description` = :desc
+  $table = $_GET['q'];
+  $sql = "UPDATE `$table` SET  `name`= :nom ,`captain` = :captain,`pathimg` = :pathimg, `description` = :desc
     WHERE id = :currentID";
   $stmt = $db->prepare($sql);
   $stmt->bindParam(':currentID', $currentID);
@@ -36,9 +33,7 @@ if (isset($_POST) && !empty($_POST)) {
   $stmt->bindParam(':desc', $desc);
   $stmt->execute();
 }
-if (empty($_POST)) {
-  echo "mettre a jour :";
-}
+
 
 // var_dump($categories);
 
@@ -63,7 +58,7 @@ if (empty($_POST)) {
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Selectionner votre equipage</a>
           <ul class="dropdown-menu my-3">
             <?php foreach ($crews as $row) { ?>
-              <li><a class="dropdown-item" href="dashboard.php?q=crew&crew=<?= urlencode($row['name']) ?>&id=<?=urlencode($row['id'])?>"><?= $row['name'] ?></a></li>
+              <li><a class="dropdown-item" href="dashboard.php?q=crew&crew=<?= urlencode($row['name']) ?>&id=<?= urlencode($row['id']) ?>"><?= $row['name'] ?></a></li>
             <?php  } ?>
           </ul>
           <?php require_once dirname(__DIR__) . '/utilities/form/crew.form.php'; ?>
