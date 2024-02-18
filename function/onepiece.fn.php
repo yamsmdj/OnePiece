@@ -89,6 +89,12 @@ function adaptUrl($url){
     return $DirectorSepare;
 }
 // SYSTEME CONNEXION/INSCRIPTION
+function isConnected (): bool {
+    if (session_status()=== PHP_SESSION_NONE) {
+        session_start();
+    }
+ return !empty($_SESSION['connecte']);
+}
 function Authentification($db, $username , $password){
     $sql = "SELECT u.id, u.username, u.password,u.role_id FROM users u 
     LEFT JOIN role_users r ON r.role = u.id
