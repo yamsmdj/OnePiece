@@ -2,21 +2,22 @@
 define("CHEMIN_DE_LIMAGE", "assets/img/test/");
 
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_FILES['pathimg']) && $_FILES['pathimg']['error'] == 0) {
 
         $fileTmpPath = $_FILES['pathimg']['tmp_name'];
         $fileName = $_FILES['pathimg']['name'];
 
-        $newFileName = str_replace(['_','',' '], '-', $fileName);
+        $newFileName = str_replace(['_', '', ' '], '-', $fileName);
         // Déplace le fichier téléchargé vers le répertoire de destination
         $destPath = CHEMIN_DE_LIMAGE . $newFileName;
         // Vérifie si le déplacement du fichier a réussi
-         if (move_uploaded_file($fileTmpPath, $destPath)) {
-             echo "Le fichier a été uploadé avec succès !";
-         } else {
-             echo "Erreur lors de l'upload du fichier.";
-         }
+        if (move_uploaded_file($fileTmpPath, $destPath)) {
+            echo "Le fichier a été uploadé avec succès !";
+        } else {
+            echo "Erreur lors de l'upload du fichier.";
+        }
     } else {
         echo "Erreur lors de la récupération du fichier.";
     }

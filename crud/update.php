@@ -13,7 +13,10 @@ $crews = Allcrew($db);
 $fruits = allFruits($db);
 $persos = allPerson($db);
 $myPerso = myPerso($db, $current_id);
-// $myFruit = findFruit($db, $current_id);
+$myFruit = findFruit($db, $current_id);
+$myCrew = myCrew($db, $current_id);
+
+
 
 
 
@@ -60,26 +63,39 @@ if (empty($_POST)) {
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Selectionner votre equipage</a>
           <ul class="dropdown-menu my-3">
             <?php foreach ($crews as $row) { ?>
-              <li><a class="dropdown-item" href="dashboard.php?q=crew&crew=<?= $row['name'] ?>"><?= $row['name'] ?></a></li>
+              <li><a class="dropdown-item" href="dashboard.php?q=crew&crew=<?= urlencode($row['name']) ?>&id=<?=urlencode($row['id'])?>"><?= $row['name'] ?></a></li>
             <?php  } ?>
           </ul>
           <?php require_once dirname(__DIR__) . '/utilities/form/crew.form.php'; ?>
+
+
+
+
+
         <?php } elseif (($_GET['q'] == 'fruits')) { ?>
           <div class="dropdown">
             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Selectionner votre fruit</a>
             <ul class="dropdown-menu">
               <?php foreach ($fruits as $row) { ?>
-                <li><a class="dropdown-item" href="dashboard.php?q=fruits&fruit=<?= $row['name'] ?>&id=<?= $row['id'] ?>"><?= $row['name'] ?></a></li>
+                <li><a class="dropdown-item" href="dashboard.php?q=fruits&fruit=<?= urlencode($row['name']) ?>&id=<?= urlencode($row['id']) ?>"><?= $row['name'] ?></a></li>
               <?php  } ?>
             </ul>
             <?php require_once dirname(__DIR__) . '/utilities/form/fruit.form.php'; ?>
+
+
+
+
+
+
+
+
 
           <?php } elseif (($_GET['q'] == 'personnage')) { ?>
             <div class="dropdown">
               <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Selectionner votre personnage</a>
               <ul class="dropdown-menu">
                 <?php foreach ($persos as $row) { ?>
-                  <li><a class="dropdown-item" href="dashboard.php?&q=personnage&persos=<?= $row['name'] ?>&id=<?= $row['id'] ?>"><?= $row['name'] ?></a></li>
+                  <li><a class="dropdown-item" href="dashboard.php?&q=personnage&persos=<?= urlencode($row['name']) ?>&id=<?= urlencode($row['id']) ?>"><?= $row['name'] ?></a></li>
                 <?php } ?>
               </ul>
           <?php require_once dirname(__DIR__) . '/utilities/form/perso.form.php';

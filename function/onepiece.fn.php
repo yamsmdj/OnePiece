@@ -25,32 +25,33 @@ function singleFruit($db)
     $fruit = $requete->fetch();
     return $fruit;
 }
-function myPerso($db, $currentId)
+function myPerso($db, $current_id)
 {
-
-    $sql = "SELECT p.id, p.name AS nameperso  , p.pathimg AS imgperso, p.price, p.description, p.crew_id,
+    $sql = "SELECT p.id, p.name AS nameperso, p.pathimg AS imgperso, p.price, p.description, p.crew_id,
     c.name AS namecrew, c.pathimg AS imgcrew,
-    f.name AS namefruit , f.pathimg AS imgfruit
+    f.name AS namefruit, f.pathimg AS imgfruit
     FROM personnage p
     LEFT JOIN crew c ON p.crew_id = c.id
     LEFT JOIN fruit f ON p.id = f.personnage_id
-    WHERE p.id = :currentId ;";
+    WHERE p.id = :currentId";
 
     $requete = $db->prepare($sql);
-    $requete->bindParam(":currentId", $currentId);
+    $requete->bindParam(":currentId", $current_id);
     $requete->execute();
 
     $myPerso = $requete->fetch();
     return $myPerso;
 }
-function findFruit($db, $currentId)
+function findFruit($db, $current_id)
 {
     $sql = 'SELECT f.name AS fname, f.pathimg AS fpathimg , f.description AS fruit_desc, perso.id AS p_id,
      perso.description AS person_desc, perso.name AS p_name, perso.pathimg AS p_pathimg
     FROM personnage perso
     INNER JOIN fruit f ON perso.id = f.personnage_id
-    WHERE f.id = ' . $currentId;
-    $requete = $db->query($sql);
+    WHERE f.id = :current_id';
+    $requete = $db->prepare($sql);
+    $requete->bindParam(':current_id', $current_id);
+    $requete->execute();
     $myFruit = $requete->fetch();
     return $myFruit;
 }
@@ -68,14 +69,16 @@ function allCrew($db)
     $crews = $requete->fetchAll();
     return $crews;
 }
-function myCrew($db, $currentId)
+function myCrew($db, $current_id)
 {
     $sql = "SELECT c.name, c.pathimg AS crewimg, c.description AS crewdesc, 
     p.pathimg AS persoimg , p.name AS personame
     FROM crew c
     INNER JOIN personnage p ON p.crew_id = c.id
-    WHERE c.id = $currentId";
-    $requete = $db->query($sql);
+    WHERE c.id = :current_id";
+    $requete = $db->prepare($sql);
+    $requete->bindParam(':current_id', $current_id);
+    $requete->execute();
     $crews = $requete->fetch();
     return $crews;
 }
