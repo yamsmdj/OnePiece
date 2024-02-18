@@ -9,6 +9,7 @@ try {
     $db = new PDO($dsn, $config['dbuser'], $config['dbpass']);
     $db->exec("SET NAMES UTF8");
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $db;
 } catch (PDOException $e){
     exit ('Fail to acces database : ' . $e->getMessage());

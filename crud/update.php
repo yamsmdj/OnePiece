@@ -13,6 +13,7 @@ $crews = Allcrew($db);
 $fruits = allFruits($db);
 $persos = allPerson($db);
 $myPerso = myPerso($db, $current_id);
+// $myFruit = findFruit($db, $current_id);
 
 
 
@@ -22,7 +23,6 @@ if (isset($_POST) && !empty($_POST)) {
   $pathimg = 'assets/img/crew/' . $_POST['pathimg'];
   $desc = $_POST['description'];
 
-  // SHOW TABLES FROM onepiece WHERE Tables_in_onepiece LIKE 'cr%' OR Tables_in_onepiece LIKE 'fr%' OR Tables_in_onepiece LIKE 'perso%'; 
   $sql = "UPDATE `crew` SET  `name`= :nom ,`captain` = :captain,`pathimg` = :pathimg, `description` = :desc
     WHERE id = :currentID";
   $stmt = $db->prepare($sql);
@@ -39,7 +39,7 @@ if (empty($_POST)) {
 
 // var_dump($categories);
 
-// SI JE CLICK SUR CREW ALORS LA CARD CREW APPARAIT
+
 ?>
 <div class="card m-auto text-center" style="width: 26rem;">
   <form action="" method="POST">
@@ -69,17 +69,10 @@ if (empty($_POST)) {
             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Selectionner votre fruit</a>
             <ul class="dropdown-menu">
               <?php foreach ($fruits as $row) { ?>
-                <li><a class="dropdown-item" href="dashboard.php?q=fruits&fruit=<?= $row['name'] ?>"><?= $row['name'] ?></a></li>
+                <li><a class="dropdown-item" href="dashboard.php?q=fruits&fruit=<?= $row['name'] ?>&id=<?= $row['id'] ?>"><?= $row['name'] ?></a></li>
               <?php  } ?>
             </ul>
             <?php require_once dirname(__DIR__) . '/utilities/form/fruit.form.php'; ?>
-
-
-
-
-
-
-
 
           <?php } elseif (($_GET['q'] == 'personnage')) { ?>
             <div class="dropdown">
