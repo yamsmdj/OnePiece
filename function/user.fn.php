@@ -7,7 +7,7 @@
 function sendUserConnect(): void
 {
     if (!isConnected()) {
-        header('Location: /login.php');
+        header('Location: /connexion/login.php');
         exit();
     }
 }

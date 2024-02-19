@@ -4,7 +4,6 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'config/config.php';
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'function/db.fn.php';
-// require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'function/onepiece.fn.php';
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'function/user.fn.php';
 $db = getPDOlink($config);
 ?>
