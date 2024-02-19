@@ -4,15 +4,10 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'config/config.php';
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'function/db.fn.php';
-require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'function/onepiece.fn.php';
-
+// require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'function/onepiece.fn.php';
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'function/user.fn.php';
 $db = getPDOlink($config);
-
-
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -34,33 +29,36 @@ $db = getPDOlink($config);
   <nav class="navbar navbar-expand-lg bg-body-tertiary py-2 text-center ">
     <div class="container-fluid navbar-light flex-column text-center ">
       <a class="navbar-brand fs-1 fw-bold" href="/index.php"> ONE PIECE
-        <img src="assets/img/chapeaudepaille.png" alt="chapeau de paille" class="h-100 w-25"> </a>
+        <img src="../assets/img/chapeaudepaille.png" alt="chapeau de paille" class="h-100 w-25"> </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse w-100" id="navbarNavAltMarkup">
         <div class="navbar-nav justify-content-evenly fs-3 w-100">
-          <a class="nav-link fw-bold " href="/crew.php">EQUIPAGE</a>
-          <a class="nav-link fw-bold  " aria-current="page" href="/personnage.php">PERSONNAGE</a>
-          <a class="nav-link fw-bold " href="/fruits.php">FRUIT DU DEMON</a>
+          <a class="nav-link fw-bold " href="/crew/crew.php">EQUIPAGE</a>
+          <a class="nav-link fw-bold  " aria-current="page" href="/personnage/personnage.php">PERSONNAGE</a>
+          <a class="nav-link fw-bold " href="/fruit/fruits.php">FRUIT DU DEMON</a>
           <a class="nav-link fw-bold disabled" href="/shop.php">SHOP</a>
-          <?php
-          if (isset($_SESSION['user']['user_role']) && $_SESSION['user']['user_role'] == 1) { ?>
-            <a class="nav-link text-warning" href="dashboard.php">DASHBOARD</a>
-          <?php }
-          ?>
+          <!-- <a class="nav-link text-warning" href="/admin/dashboard.php">DASHBOARD</a> -->
+         
           <!-- <?php //if (isset($_SESSION['user']['user_role']) && $_SESSION['user']['user_role']== 1) { 
                 ?>
           <a class="nav-link text-warning" href="dashboard.php">DASHBOARD</a> // }-->
           <?php
           if (isConnected()) { ?>
-            <a class="nav-link" href="/logout.php">Se deconnecter</a>
+            <a class="nav-link" href="/connexion/logout.php">Se deconnecter</a>
           <?php } else { ?>
-            <a class="nav-link" href="/login.php">Se Connecter</a>
+            <a class="nav-link" href="/connexion/login.php">Se Connecter</a>
           <?php } ?>
 
         </div>
       </div>
     </div>
   </nav>
+  <div class="">
+    <?php
+    if (isset($_SESSION['user']['user_role']) && $_SESSION['user']['user_role'] == 1) {
+      require_once dirname(__DIR__) . '/admin/dashboard.php';
+    } ?>
+  </div>
   <main class="flex-grow-1">

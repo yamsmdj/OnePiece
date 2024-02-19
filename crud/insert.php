@@ -1,5 +1,5 @@
-<?php 
-require_once __DIR__ . '/utilities/header.php';
+<?php
+// require_once dirname(__DIR__) . '/utilities/header.php';
 
 if (isset($_POST) && !empty($_POST)) {
     $nom = $_POST['name'];
@@ -7,28 +7,25 @@ if (isset($_POST) && !empty($_POST)) {
     $pathimg = 'assets/img/crew/' . $_POST['pathimg'];
     $desc = $_POST['description'];
 
-    $sql = "INSERT INTO crew (`name`, `captain` , `pathimg` , `description`) VALUES ('$nom', '$captain' , '$pathimg' , '$desc') ";
-    $db->query($sql);
+    $sql = "INSERT INTO crew (`name`, `captain` , `pathimg` , `description`) VALUES (?, ?, ?, ?) ";
+    $stmt = $db->prepare($sql);
+    $stmt->execute($nom, $captain, $pathimg, $desc);
     header('Location: crew.php');
-
-   } 
-  ?>
-    <div class="card" style="width: 18rem;">
-        <form action="#" method="POST">
-            <label for="name"> Nom de l'equipage ! </label>
-            <input type="text" name="name">
-
-            <label for="captain">Nom du capitaine</label>
-            <input type="text" name="captain">
-
-            <label for="pathimg"> Chemin de l'image </label>
-            <input type="file" name="pathimg">
-
-            <label for="description"> presente ton equipage : </label>
-            <input type="text" name="description">
-
-            <input type="submit" name="ajouter" >Ajouter un equipage !</input>
-        </form>
-    </div>
-
-    ?>
+}
+?>
+<div class="card text-center" style="width: 26rem;">
+    <form action="" method="POST">
+        <h1>INSERT</h1>
+        <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle my-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Selectionner l'endroit où crée
+            </a>
+            <ul class="dropdown-menu ">
+                <li><a class="dropdown-item" href="dashboard.php?q=crew ">equipage</a></li>
+                <li><a class="dropdown-item" href="dashboard.php?q=fruits ">fruits</a></li>
+                <li><a class="dropdown-item" href="dashboard.php?q=personnage">personnage</a></li>
+            </ul>
+        </div>
+        <?php require_once dirname(__DIR__) . '/utilities/form/perso.form.php';
+             ?>
+</div>

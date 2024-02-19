@@ -1,6 +1,7 @@
 
 <?php 
-$myPerso = myPerso($db,$_GET['id']);
+$myPerso = getPersoById($db,$_GET['id']);
+
 ?>
 
 <div class="d-flex py-4 m-auto w-50">

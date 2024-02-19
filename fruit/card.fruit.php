@@ -1,12 +1,12 @@
 <?php
 
-$myFruit = findFruit($db,$_GET['id']);
+$myFruit = getFruitById($db,$_GET['id']);
 
 if($myFruit) {
 ?>
 <div class="d-flex justify-content-evenly w-75 m-auto" >
     <div class="card w-25" >
-        <img src="<?= $myFruit['fpathimg'] . str_replace(' ', '' ,$myFruit['fname']) . '.jpg' ?>" class="card-img-top img-fluid w-50 mx-auto" alt="<?= $myFruit['fname'] ?>">
+        <img src="<?= '../' . $myFruit['fpathimg'] . str_replace(' ', '' ,$myFruit['fname']) . '.jpg' ?>" class="card-img-top img-fluid w-50 mx-auto" alt="<?= $myFruit['fname'] ?>">
         <div class="card-body">
             <p class="card-text "><?= $myFruit['fruit_desc'] ?> </p>
         </div>

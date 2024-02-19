@@ -43,23 +43,25 @@ WHERE username = :username ";
         "username" => $user["username"],
         "user_role" => $user['role_id']
     ];
-    header('Location: /index.php');
+    header('Location: ../index.php');
     exit();
 }
 function register($db)
 {
+    var_dump('ok');
     $pseudo = $_POST['pseudo'];
     $password = $_POST['password'];
     $mail = $_POST['mail'];
     $firstname = $_POST['firstname'];
+    $roleid = 2 ;
 
-    if (isset($_POST) && !empty($_POST)) {
-        $sql = "INSERT INTO users (`username`, `password`,`role_id`, `email`, `firstname`) VALUES (:pseudo,:password,2,:mail,:firstname)";
+
+    if (isset($_POST)) {
+        $sql = "INSERT INTO users (`username`, `password`, `role_id`, `email`, `firstname`) VALUES (?, ?, ?, ?, ?)";
         $query = $db->prepare($sql);
-        $query->bindParam(':pseudo', $pseudo);
-        $query->bindParam(':password', $password);
-        $query->bindParam(':mail', $mail);
-        $query->bindParam(':firstname', $firstname);
-        $query->execute();
+        if($query->execute([$pseudo, $password, $roleid, $mail, $firstname])){
+        }else{
+            var_dump('pasok');
+        };
     }
 }

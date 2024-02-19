@@ -1,5 +1,6 @@
 <?php
 
+
 function getAllFruits($db)
 {
     $sql = 'SELECT * FROM fruit';
