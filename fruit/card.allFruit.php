@@ -1,4 +1,6 @@
-<?php foreach ($fruits as  $fruit) { ?>
+<?php foreach ($fruits as  $fruit) {
+
+?>
 
   <div class="p-3 d-flex">
     <div class="card" style="width: 18rem;">

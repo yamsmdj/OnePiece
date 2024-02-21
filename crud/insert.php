@@ -1,7 +1,12 @@
 <?php
-// require_once dirname(__DIR__) . '/utilities/header.php';
+require_once dirname(__DIR__) . '/utilities/header.php';
+require_once dirname(__DIR__) . '/function/crew.fn.php';
+require_once dirname(__DIR__) . '/function/perso.fn.php';
+require_once dirname(__DIR__) . '/function/fruit.fn.php';
 
-if (isset($_POST) && !empty($_POST)) {
+$crews = getAllCrew($db);
+
+if (!empty($_POST)) {
     $nom = $_POST['name'];
     $captain = $_POST['captain'];
     $pathimg = 'assets/img/crew/' . $_POST['pathimg'];
@@ -9,23 +14,24 @@ if (isset($_POST) && !empty($_POST)) {
 
     $sql = "INSERT INTO crew (`name`, `captain` , `pathimg` , `description`) VALUES (?, ?, ?, ?) ";
     $stmt = $db->prepare($sql);
-    $stmt->execute($nom, $captain, $pathimg, $desc);
-    header('Location: crew.php');
+    $stmt->execute([$nom, $captain, $pathimg, $desc]);
+    if ($stmt) {
+        echo 'l\'équipage a bien été ajouter';
+        header("Location: " . $_SERVER['HTTP_REFERER']);
+    }
 }
 ?>
 <div class="card text-center" style="width: 26rem;">
     <form action="" method="POST">
         <h1>INSERT</h1>
-        <div class="dropdown">
-            <a class="btn btn-secondary dropdown-toggle my-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Selectionner l'endroit où crée
-            </a>
-            <ul class="dropdown-menu ">
-                <li><a class="dropdown-item" href="dashboard.php?q=crew ">equipage</a></li>
-                <li><a class="dropdown-item" href="dashboard.php?q=fruits ">fruits</a></li>
-                <li><a class="dropdown-item" href="dashboard.php?q=personnage">personnage</a></li>
-            </ul>
-        </div>
-        <?php require_once dirname(__DIR__) . '/utilities/form/perso.form.php';
-             ?>
+
+        <?php
+        if ($_GET['q'] == 'crew') {
+            require_once __DIR__ . '/form/insert.crew.php';
+        } elseif ($_GET['q'] == 'perso') {
+            require_once __DIR__ . '/form/insert.perso.php';
+        } elseif ($_GET['q'] == 'fruit') {
+            require_once __DIR__ . '/form/insert.fruit.php';
+        }
+        ?>
 </div>

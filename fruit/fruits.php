@@ -4,13 +4,12 @@ require_once  dirname(__DIR__) .  '/function/fruit.fn.php';
 
 
 
-if (isset($_GET['genre']) && !empty($_GET['genre'])) {
+if (!empty($_GET['genre'])) {
   $genre = $_GET['genre'];
   $fruits = getFruitById($db, $genre);
 } else {
   $fruits = getAllFruits($db);
 }
-
 ?>
 
 <h1 class="text-center pt-4">FRUIT DU DEMON</h1>

@@ -1,7 +1,6 @@
 
 <?php 
 $myPerso = getPersoById($db,$_GET['id']);
-
 ?>
 
 <div class="d-flex py-4 m-auto w-50">
@@ -20,7 +19,7 @@ $myPerso = getPersoById($db,$_GET['id']);
   <div class="d-flex flex-column">
 
     <div class="card" style="width: 15rem;">
-      <img src="<?= $myPerso['imgcrew'] ?> " class="card-img-top" alt="<?= $myPerso['namecrew']?>">
+      <img src="<?= '../' . $myPerso['imgcrew'] ?> " class="card-img-top" alt="<?= $myPerso['namecrew']?>">
       <div class="card-body">
         <h4><?= $myPerso['namecrew'] ?> </h4>
       </div>
@@ -31,8 +30,8 @@ $myPerso = getPersoById($db,$_GET['id']);
     <div class="card" style="width: 15rem;">
         <?php 
         $myPersoImg = '';
-        if (isset($myPerso['imgfruit']) && !empty($myPerso['imgfruit'])) {
-        $myPersoImg = $myPerso['imgfruit'] . str_replace(' ', '',$myPerso['namefruit'])  . '.jpg';
+        if (!empty($myPerso['imgfruit'])) {
+        $myPersoImg = '../' . $myPerso['imgfruit'] . str_replace(' ', '',$myPerso['namefruit'])  . '.jpg';
         echo "<img src='$myPersoImg'  class='card-img-top' alt='...'> ";
         }?>
         <div class="card-body">

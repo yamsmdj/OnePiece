@@ -19,8 +19,15 @@ function getRandomFruit($db)
     $fruit = $requete->fetch();
     return $fruit;
 }
+function getFruitById($db,$currentId){
+    $sql = "SELECT f.id, f.name, f.genre, f.price, f.pathimg, f.description  
+    FROM fruit f
+    WHERE id = ?";
+    $query = $db->prepare($sql);
+    $query->execute([$currentId]);
+}
 
-function getFruitById($db, $current_id)
+function getFruitCrewById($db, $current_id)
 {
     $sql = 'SELECT f.name AS fname, f.pathimg AS fpathimg , f.description AS fruit_desc, perso.id AS p_id,
      perso.description AS person_desc, perso.name AS p_name, perso.pathimg AS p_pathimg

@@ -1,25 +1,25 @@
         <?php
-        // var_dump($crews);
+
         ?>
-        <form action="" method="POST">
+        <form action="" method="POST" class="d-flex justify-content-center mt-5 pt-3">
             <div class="card text-center" style="width: 26rem;">
                 <div class="w-50 m-auto text-center">
 
                     <div class="">
                         <label for="nom"> Nom de l'equipage ! </label>
-                        <input type="text" name="name" value="<?= empty($crews['name']) ? 'Choisi un equipage' : $crews['name'] ?>">
+                        <input type="text" name="name" value="<?= $crews['name'] ?>">
                     </div>
                     <div class="">
                         <label for="captain">Nom du capitaine</label>
-                        <input type="text" name="captain" value="<?= empty($crews['personame']) ? 'Choisi le nom du capitaine' : $crews['personame'] ?>">
+                        <input type="text" name="captain" value="<?= $crews['personame'] ?>">
                     </div>
                     <div class="div">
                         <label for="pathimg"> Chemin de l'image </label>
-                        <input type="file" class="border" name="pathimg">
+                        <input type="file" name="pathimg" class="border">
                     </div>
                     <div class="">
                         <label for="description"> description : </label>
-                        <input type="text" name="description" value="<?= empty($crews['crewdesc']) ? 'une description' : $crews['crewdesc'] ?>">
+                        <textarea type="text" name="description"><?= $crews['crewdesc'] ?></textarea>
                     </div>
 
                     <button type="submit" class="my-3" name="ajouter">Modifie cette equipage !</button>

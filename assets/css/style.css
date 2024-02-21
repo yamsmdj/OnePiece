@@ -1,14 +1,41 @@
 
-.m-h-350 {
-    min-height: 350px ;
+.mx-h-265 {
+    max-height: 265px ;
+}
+.m-h-265 {
+    min-height: 265px ;
 }
 
-.mx-h-350 {
-    max-height: 350px;
+.m-h-350 {
+    min-height: 350px!important;
 }
+.mx-h-350 {
+    max-height: 350px!important;
+}
+
+
+
 
 .h-40em{
     height: 40em;
 }
 
+.h-450{
+    height: 450px!important ;
+}
+.h-350{
+    height: 350px!important ;
+}
+.h-300{
+    height: 300px!important ;
+}
+.h-250{
+    height: 250px!important ;
+}
+.h-200{
+    height: 200px!important ;
+}
+.h-150{
+    height: 150px!important ;
+}
 

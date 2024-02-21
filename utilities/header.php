@@ -20,7 +20,7 @@ $db = getPDOlink($config);
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/fav/fav32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/fav/fav32.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
   <title>ONE PIECE</title>
 </head>
 

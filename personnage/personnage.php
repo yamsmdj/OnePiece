@@ -7,9 +7,9 @@ $personnages = getAllPerso($db);
 
 
 <h1 class="text-center pt-4"> Personnages </h1>
-<div class="d-flex flex-wrap justify-content-center py-5">
+<div class="d-flex flex-wrap justify-content-between col-7 m-auto gap-1">
     <?= include __DIR__ . '/card.allPerso.php';
-    require_once dirname(__DIR__) . '/crud/insert.php';
+    // require_once dirname(__DIR__) . '/crud/insert.php';
     ?>
 
 </div>
