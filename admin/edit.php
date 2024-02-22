@@ -6,7 +6,7 @@ sendUserConnect();
 if (isset($_SESSION['user']['user_role']) && $_SESSION['user']['user_role'] == 1) {
 
     $crewPersoFruit = getAllCrewPersoFruit($db);
-    
+
 ?>
 
 
@@ -27,7 +27,8 @@ if (isset($_SESSION['user']['user_role']) && $_SESSION['user']['user_role'] == 1
                     <td><?= $row['crewname'] ?></td>
                     <td><?= $row['personame'] ?></td>
                     <td><?= empty($row['fruitname']) ? 'pas de fruit' : $row['fruitname'] ?></td>
-                    <td> <a href="/crud/update.php?q=id=<?= $row['id'] ?>" class="btn btn-warning">update</a></td>
+                    <td class="text-center"> <a href="/crud/update.php?q=id=<?= $row['id'] ?>" class="btn btn-warning">update</a></td>
+                    <td class="text-start"> <a href="/crud/delete.php?q=id=<?= $row['id'] ?>" class="btn btn-danger">delete</a></td>
                 </tr>
             <?php
             endforeach;

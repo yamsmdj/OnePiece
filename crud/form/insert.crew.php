@@ -19,7 +19,7 @@
                      <textarea type="text" name="description"></textarea>
                  </div>
 
-                 <button type="submit" class="my-3" name="ajouter">Modifie cette equipage !</button>
+                 <button type="submit" class="my-3" name="ajouter">Ajouter cette equipage !</button>
              </div>
      </form>
      </div>

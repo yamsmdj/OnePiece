@@ -32,9 +32,10 @@ function updateCrew($db, $name, $captain, $pathimg, $desc, $currentId)
 
 function addCrew($db, $name, $captain, $pathimg, $desc)
 {
-    $sql = "INSERT INTO `perso` (`name`, `captain`, `pathimg`, `description`) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO `crew` (`name`, `captain`, `pathimg`, `description`) VALUES (?, ?, ?, ?)";
     $stmt = $db->prepare($sql);
     $stmt->execute([$name, $captain, $pathimg, $desc]);
+    return $stmt;
 }
 
 function removeCrew($db, $currentId)

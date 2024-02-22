@@ -57,7 +57,7 @@ function updateFruit($db, $name, $genre, $price, $pathimg, $personnage_id, $desc
 
 function addFruit($db, $name, $genre, $price, $pathimg, $personnage_id, $desc)
 {
-    $sql = "INSERT INTO `perso` (`name`, `captain`, `pathimg`, `description`) VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO `fruit` (`name`, `genre`, `price`, `pathimg`, `personnage_id`, `description`) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $db->prepare($sql);
     $stmt->execute([$name, $genre, $price, $pathimg, $personnage_id, $desc]);
 }

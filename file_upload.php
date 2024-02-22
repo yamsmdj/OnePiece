@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "Erreur lors de l'upload du fichier.";
         }
     } else {
-        echo "Erreur lors de la récupération du fichier.";
+        // echo "Erreur lors de la récupération du fichier.";
     }
 }
 

@@ -48,11 +48,13 @@ function updatePerso($db, $name, $pathimg, $price, $desc, $crew_id, $currentId)
 
 function addPerso($db, $name, $pathimg, $price, $desc, $crew_id)
 {
-    $sql = "INSERT INTO `perso` (`name`, `pathimg`, `price`, `description`, `crew_id`) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO `personnage` (`name`, `pathimg`, `price`, `description`, `crew_id`) VALUES (?, ?, ?, ?, ?)";
     $stmt = $db->prepare($sql);
     $stmt->execute([$name, $pathimg, $price, $desc, $crew_id]);
 }
 
 function removePerso($db, $currentId)
 {
+    $sql = "DELETE FROM personnage WHERE id = $currentId";
+    $db->query($sql);
 }

@@ -29,4 +29,5 @@ if (!empty($_GET['genre'])) {
   <?php require_once __DIR__ . '/card.allFruit.php' ?>
 </div>
 
+
 <?php require_once dirname(__DIR__) . '/utilities/footer.php' ?>
